@@ -4,7 +4,8 @@ import './App.css';
 function App() {
   return (
     <>
-      Cookie
+      <div>NewJeans Cookie</div>
+      <div></div>
     </>
   );
 }
