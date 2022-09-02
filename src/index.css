@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Neue Montral', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,4 +10,56 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: 'Neue Montral';
+  src: url('../public/neue-montreal/NeueMontreal-Light.otf');
+  font-weight: light;
+}
+
+@font-face{
+  font-family: 'Neue Montral';
+  src: url('../public/neue-montreal/NeueMontreal-LightItalic.otf');
+  font-weight: light;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Montral';
+  src: url('../public/neue-montreal/NeueMontreal-Regular.otf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montral';
+  src: url('../public/neue-montreal/NeueMontreal-Italic.otf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Montral';
+  src: url('../public/neue-montreal/NeueMontreal-Medium.otf');
+  font-weight: medium;
+}
+
+@font-face {
+  font-family: 'Neue Montral';
+  src: url('../public/neue-montreal/NeueMontreal-MediumItalic.otf');
+  font-weight: medium;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Montral';
+  src: url('../public/neue-montreal/NeueMontreal-Bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Neue Montral';
+  src: url('../public/neue-montreal/NeueMontreal-BoldItalic.otf');
+  font-weight: bold;
+  font-style: italic;
 }
