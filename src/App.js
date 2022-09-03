@@ -1,12 +1,12 @@
 
 import './App.css';
+import Header from './Header';
 
-function App() {
+const App = () => {
   return (
-    <>
-      <div>NewJeans Cookie</div>
-      <div></div>
-    </>
+    <div className="p-4">
+      <Header />
+    </div>
   );
 }
 
