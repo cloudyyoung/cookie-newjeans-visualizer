@@ -18,10 +18,10 @@ const Header = () => {
             <div className="font-medium text-3xl mt-0">NewJeans</div>
             <div className="grid grid-cols-1 font-normal mt-10 text-xs divide-y divide-white/30">
                 {table.map(([title, people]) => (
-                    <div className="grid grid-cols-3 gap-2">
+                    <div key={title} className="grid grid-cols-3 gap-2">
                         <div className="font-bold col-span-2">{title}</div>
                         <div className="shrink">
-                            {Array.isArray(people) ? people.map((person) => (<div>{person}</div>)) : people}
+                            {Array.isArray(people) ? people.map((person) => (<div key={person}>{person}</div>)) : people}
                         </div>
                     </div>
                 ))}
