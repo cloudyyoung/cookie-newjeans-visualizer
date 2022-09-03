@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { default as LrcString } from './Lrc';
 import { Lrc } from 'react-lrc';
 import classNames from 'classnames';
@@ -8,8 +8,9 @@ const components = {
     "[header]": <Header />
 };
 
-const Lyrics = ({ started }) => {
+const Lyrics = ({ started, onScroll, onTouchStart, onTouchEnd }) => {
     let [ms, setMs] = useState(1250);
+    const ref = useRef(null);
 
     // Auto increase ms
     useEffect(() => {
@@ -17,10 +18,23 @@ const Lyrics = ({ started }) => {
             setInterval(() => {
                 ms += 100;
                 setMs(ms);
-                console.log(ms);
             }, 100);
         }
     }, [started]);
+
+    useEffect(() => {
+        if (ref.current) {
+            const aaa = ref.current.scrollToCurrentLine;
+            ref.current.scrollToCurrentLine = () => {
+                console.log("scroll back");
+                // aaa();
+            };
+            ref.current.dom.onscroll = onScroll;
+            ref.current.dom.ontouchstart = onTouchStart;
+            ref.current.dom.ontouchend = onTouchEnd;
+            console.log(ref.current);
+        }
+    }, []);
 
     const renderer = ({ index, active, line }) => {
         const component = components[line.content];
@@ -32,6 +46,7 @@ const Lyrics = ({ started }) => {
     return (
         <>
             <Lrc
+                ref={ref}
                 lrc={LrcString}
                 lineRenderer={renderer}
                 currentMillisecond={ms}
