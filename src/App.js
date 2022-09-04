@@ -39,7 +39,7 @@ const App = () => {
         controls
         muted={singing}
       />
-      <Lyrics started={started} onTouchStart={() => setSinging(false)} onTouchEnd={() => setSinging(true)} />
+      <Lyrics started={started} singing={singing} setSinging={setSinging} />
     </>
   );
 }
